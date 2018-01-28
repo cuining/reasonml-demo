@@ -31,5 +31,13 @@ module.exports = {
       inject: true
     }),
     new UglifyJsPlugin()
-  ]
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
+      }
+    ]
+  }
 }
